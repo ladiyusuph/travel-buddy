@@ -1,0 +1,12 @@
+{% extends "travelbuddy/_base.html" %}
+
+{% load tailwind_filters %}
+
+{% block content %}
+    <h1 class="text-4xl underline underline-offset-4 mb-8">Trip Form</h1>
+    <form action="" method="POST" class="max-w-lg mx-auto">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Save" class="btn btn-success mt-4">
+    </form>
+{% endblock content %}

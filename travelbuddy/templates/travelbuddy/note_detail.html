@@ -1,0 +1,21 @@
+{% extends "travelbuddy/_base.html" %}
+
+{% block content %}
+    <h1 class="text-4xl underline underline-offset-4 mb-8">Note Detail</h1>
+    <a class="btn btn-outline-secondary mr-4" href="{% url 'note-update' note.pk %}">Edit</a>
+    <form class="inline" action="{% url 'note-delete' note.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-outline-danger" value="Delete" />
+    </form>
+
+    <div class="bg-gray-50 p-8 rounded shadow my-4">
+        <p class="text-2x1">{{note.name}}</p>
+        <p class="text-2x1">Description: {{note.description}}</p>
+        <p class="text-2x1">Type: {{note.type|title}}</p>
+        <p class="text-2x1">Rating: {{note.rating}}/5</p>
+        <img src="{{note.img.url}}" alt="{{note.name}}">
+    </div>
+
+{% endblock content %}
+
+

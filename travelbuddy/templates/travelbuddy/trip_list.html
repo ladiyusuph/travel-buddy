@@ -1,0 +1,26 @@
+{% extends "travelbuddy/_base.html" %}
+
+{% block content %}
+    <h1 class="text-4xl underline underline-offset-4 mb-8">My Trips</h1>
+    {% for trip in trips %}
+        <div class="bg-gray-50 p-10 rounded shadow mb-4">
+            <a href="{% url 'trip-detail' trip.pk %}" class="text-2xl font-bold">
+                {{ trip.name }}
+                <p class="text-3xl font-bold">{{ trip.country }} | {{ trip.city }}</p>
+                <p>
+                    {% if trip.start_date %}
+                        {{ trip.start_date | date:"F jS" }}
+                    {% else %}
+                        TBA
+                    {% endif %}
+                    to
+                    {% if trip.end_date %}
+                        {{ trip.end_date | date:"F jS" }}
+                    {% else %}
+                        TBA
+                    {% endif %}
+                </p>
+            </a>
+        </div>
+    {% endfor %}
+{% endblock content %}
