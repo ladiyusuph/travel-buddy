@@ -34,3 +34,5 @@ Travel Buddy is a Django application for planning and documenting trips. Users c
 5. Access the application at [http://localhost:8000/](http://localhost:8000/) in your web browser.
 
 Feel free to customize and enhance the application based on your specific travel planning needs. Happy traveling! 🌍✈️
+
+[Screen short of the app hoemapge](https://github.com/ladiyusuph/travel-buddy/blob/main/media/screenshots/Screenshot%20from%202024-01-31%2015-16-14.png)
